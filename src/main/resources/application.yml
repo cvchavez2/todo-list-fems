@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: todo-list-fems
+
+todo:
+  url: "localhost:8080"

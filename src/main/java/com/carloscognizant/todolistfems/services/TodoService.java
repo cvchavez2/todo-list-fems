@@ -12,6 +12,6 @@ public class TodoService {
     TodoClient todoClient;
 
     public Todo addTodo(Todo newTodo){
-        return new Todo();
+        return newTodo;
     }
 }
