@@ -3,10 +3,10 @@ package com.carloscognizant.todolistfems.models;
 import java.util.Date;
 
 public class Todo {
+    long id;
     String createdBy;
-    long referenceId;
     boolean isCompleted;
-    String itemName;
+    String todo;
     Date dateCreated;
     Date dateCompleted;
 
@@ -19,11 +19,11 @@ public class Todo {
     }
 
     public long getReferenceId() {
-        return referenceId;
+        return id;
     }
 
     public void setReferenceId(long referenceId) {
-        this.referenceId = referenceId;
+        this.id = referenceId;
     }
 
     public boolean isCompleted() {
@@ -35,11 +35,11 @@ public class Todo {
     }
 
     public String getItemName() {
-        return itemName;
+        return todo;
     }
 
     public void setItemName(String itemName) {
-        this.itemName = itemName;
+        this.todo = itemName;
     }
 
     public Date getDateCreated() {

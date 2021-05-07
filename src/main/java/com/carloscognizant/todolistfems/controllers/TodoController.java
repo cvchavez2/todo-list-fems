@@ -16,7 +16,8 @@ public class TodoController {
         this.todoService = todoService;
     }
 
-    @PostMapping(consumes = "application/json", produces = "application/json")
+
+    @PostMapping(path = "/add", consumes = "application/json", produces = "application/json")
     public Todo addTodo(@RequestBody Todo newTodo){
         return todoService.addTodo(newTodo);
     }

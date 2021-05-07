@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "todo-crud", url = "${todo.url}")
 public interface TodoClient {
 
-    @PostMapping
+    @PostMapping("todo/add")
     Todo addPost(@RequestParam Todo newTodo);
 }
