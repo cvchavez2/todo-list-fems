@@ -1,9 +1,9 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
   application:
     name: todo-list-fems
 
 todo:
-  url: "localhost:8080"
+  url: "http://localhost:5000"

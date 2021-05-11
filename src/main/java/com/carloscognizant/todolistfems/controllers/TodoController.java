@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/todo")
+@RequestMapping("/todoitems")
 public class TodoController {
 
     private TodoService todoService;
@@ -17,8 +17,13 @@ public class TodoController {
     }
 
 
-    @PostMapping(path = "/add", consumes = "application/json", produces = "application/json")
-    public Todo addTodo(@RequestBody Todo newTodo){
+    @PostMapping(consumes = "application/json", produces = "application/json")
+    public String addTodo(@RequestBody Todo newTodo){
         return todoService.addTodo(newTodo);
+    }
+
+    @GetMapping()
+    public String getTodos(@RequestParam(value = "id") long id){
+        return todoService.getTodos(id);
     }
 }

@@ -11,7 +11,14 @@ public class TodoService {
     @Autowired
     TodoClient todoClient;
 
-    public Todo addTodo(Todo newTodo){
-        return newTodo;
+    public String addTodo(Todo newTodo){
+        System.out.println(newTodo.getCreatedBy());
+        String s = todoClient.addPost(newTodo);
+        return s;
+    }
+
+    public String getTodos(long id){
+        todoClient.getTodos(id);
+        return "todo's to return";
     }
 }
