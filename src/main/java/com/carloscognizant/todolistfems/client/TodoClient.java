@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 public interface TodoClient {
 
     @PostMapping(path = "/todoitems", consumes = "application/json")
-    String addPost(@RequestBody Todo newTodo);
+    Todo addPost(@RequestBody Todo newTodo);
 
     @GetMapping(path = "/todoitems")
-    String getTodos(@RequestParam(value = "id") long id);
+    Todo getTodo(@RequestParam(value = "id") long id);
 }

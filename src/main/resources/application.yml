@@ -6,4 +6,4 @@ spring:
     name: todo-list-fems
 
 todo:
-  url: "http://localhost:5000"
+  url: "http://localhost:5000/api"
