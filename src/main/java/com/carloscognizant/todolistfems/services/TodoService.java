@@ -1,9 +1,11 @@
 package com.carloscognizant.todolistfems.services;
 
 import com.carloscognizant.todolistfems.client.TodoClient;
-import com.carloscognizant.todolistfems.models.Todo;
+import com.carloscognizant.todolistfems.models.TodoItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class TodoService {
@@ -11,11 +13,16 @@ public class TodoService {
     @Autowired
     TodoClient todoClient;
 
-    public Todo addTodo(Todo newTodo){
-        return todoClient.addPost(newTodo);
+    public TodoItem addTodo(TodoItem newTodoItem){
+        return todoClient.addPost(newTodoItem);
     }
 
-    public Todo getTodo(long id){
+    public TodoItem getTodo(long id){
         return todoClient.getTodo(id);
     }
+
+    public List<TodoItem> getTodos(){
+        return todoClient.getTodos();
+    }
+
 }

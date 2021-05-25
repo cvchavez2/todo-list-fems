@@ -1,15 +1,20 @@
 package com.carloscognizant.todolistfems.client;
 
-import com.carloscognizant.todolistfems.models.Todo;
+import com.carloscognizant.todolistfems.models.TodoItem;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @FeignClient(value = "todo-crud", url = "${todo.url}")
 public interface TodoClient {
 
     @PostMapping(path = "/todoitems", consumes = "application/json")
-    Todo addPost(@RequestBody Todo newTodo);
+    TodoItem addPost(@RequestBody TodoItem newTodoItem);
+
+    @GetMapping(path = "/todoitems/{id}")
+    TodoItem getTodo(@PathVariable long id);
 
     @GetMapping(path = "/todoitems")
-    Todo getTodo(@RequestParam(value = "id") long id);
+    List<TodoItem> getTodos();
 }

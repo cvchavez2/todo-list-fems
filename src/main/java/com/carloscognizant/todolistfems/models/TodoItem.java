@@ -2,7 +2,7 @@ package com.carloscognizant.todolistfems.models;
 
 import java.util.Date;
 
-public class Todo {
+public class TodoItem {
     long id;
     String createdBy;
     boolean isCompleted;
@@ -26,12 +26,12 @@ public class Todo {
         this.createdBy = createdBy;
     }
 
-    public boolean isCompleted() {
+    public boolean getIsCompleted() {
         return isCompleted;
     }
 
-    public void setCompleted(boolean completed) {
-        isCompleted = completed;
+    public void setCompleted(boolean isCompleted) {
+        this.isCompleted = isCompleted;
     }
 
     public String getTodo() {

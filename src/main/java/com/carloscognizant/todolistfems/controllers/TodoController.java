@@ -1,9 +1,11 @@
 package com.carloscognizant.todolistfems.controllers;
 
-import com.carloscognizant.todolistfems.models.Todo;
+import com.carloscognizant.todolistfems.models.TodoItem;
 import com.carloscognizant.todolistfems.services.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/todoitems")
@@ -18,12 +20,17 @@ public class TodoController {
 
 
     @PostMapping(consumes = "application/json", produces = "application/json")
-    public Todo addTodo(@RequestBody Todo newTodo){
-        return todoService.addTodo(newTodo);
+    public TodoItem addTodo(@RequestBody TodoItem newTodoItem){
+        return todoService.addTodo(newTodoItem);
     }
 
-    @GetMapping()
-    public Todo getTodo(@RequestParam(value = "id") long id){
+    @GetMapping("/{id}")
+    public TodoItem getTodo(@PathVariable long id){
+        System.out.println("id: " + id);
         return todoService.getTodo(id);
+    }
+    @GetMapping()
+    public List<TodoItem> getTodos(){
+        return todoService.getTodos();
     }
 }
