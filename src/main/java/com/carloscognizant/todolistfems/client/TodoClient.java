@@ -17,4 +17,7 @@ public interface TodoClient {
 
     @GetMapping(path = "/todoitems")
     List<TodoItem> getTodos();
+
+    @PutMapping(path = "/todoitems/{id}")
+    TodoItem updateTodoItem(@PathVariable long id, @RequestBody TodoItem todoItem);
 }

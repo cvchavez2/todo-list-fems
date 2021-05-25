@@ -25,4 +25,7 @@ public class TodoService {
         return todoClient.getTodos();
     }
 
+    public TodoItem updateTodoItem(long id, TodoItem todoItem) {
+        return todoClient.updateTodoItem(id, todoItem);
+    }
 }
